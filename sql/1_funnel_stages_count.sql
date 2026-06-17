@@ -1,10 +1,15 @@
--- CREATE TABLE user_events (
---     event_id INT PRIMARY KEY,
---     user_id INT,
---     event_type VARCHAR(50),
---     event_date TIMESTAMP,
---     product_id INT,
---     amount NUMERIC,
---     traffic_source VARCHAR(50)
--- );
+-- define sales funnel and the different stages
 
+WITH funnel_stages AS (
+    SELECT
+        COUNT(DISTINCT CASE WHEN event_type = 'page_view' THEN user_id END) AS stage_1_views,
+        COUNT(DISTINCT CASE WHEN event_type = 'add_to_cart' THEN user_id END) AS stage_2_cart,
+        COUNT(DISTINCT CASE WHEN event_type = 'checkout_start' THEN user_id END) AS stage_3_checkout,
+        COUNT(DISTINCT CASE WHEN event_type = 'payment_info' THEN user_id END) AS stage_4_payment,
+        COUNT(DISTINCT CASE WHEN event_type = 'purchase' THEN user_id END) AS stage_5_purchase
+
+    FROM user_events
+    )
+    
+SELECT * 
+FROM funnel_stages;
