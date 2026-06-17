@@ -1,13 +1,13 @@
 # E-Commerce Sales Funnel & Marketing Channel Optimization (SQL)
 
-## Project Overview
-This project evaluates a 30-day user performance window ($N = 5,000$ unique visitors) using an e-commerce event dataset to isolate conversion bottlenecks, evaluate marketing traffic acquisition channel efficiency, map user velocity, and establish baseline unit-economic constraints. 
+## 📌 Project Overview
+This project evaluates a user performance window ($N = 5,000$ unique visitors) using an e-commerce event dataset to isolate conversion bottlenecks, evaluate marketing traffic acquisition channel efficiency, map user velocity, and establish baseline unit-economic constraints. 
 
 The core focus of this repository is to move past writing raw SQL syntax and translate quantitative query outputs into high-impact, actionable strategic recommendations for cross-functional corporate stakeholders in **UX/Product, Growth Marketing, and Finance**.
 
 ---
 
-## Deep-Dive Funnel Degradation Analysis
+## 📊 Deep-Dive Funnel Degradation Analysis
 
 The table below breaks down absolute user volume drops and isolated stage-to-stage conversion efficiency metrics. 
 
@@ -31,12 +31,12 @@ Below is the verified preview of the raw user event logs being successfully mana
 
 ---
 
-## Marketing Acquisition Channel Audit
+## 🏁 Marketing Acquisition Channel Audit
 
 A breakdown by acquisition source reveals a sharp divergence between high-traffic channels and high-converting intent pools.
 
 ### Traffic & Conversion Matrix
-| Traffic Source | Views (Vol) | Carts | Purchases | Cart Conversion (View → Cart) | Purchase Conversion (Cart → Purchase) | Overall Conversion (View → Purchase) |
+| Traffic Source | Views (Vol) | Carts | Purchases | View → Cart Rate | Cart → Purchase Rate | View → Purchase Rate |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | **Organic** | 2,038 | 669 | 343 | 32.83% | 51.27% | 16.83% |
 | **Paid Ads** | 968 | 358 | 204 | 36.98% | 56.98% | 21.07% |
@@ -49,7 +49,7 @@ A breakdown by acquisition source reveals a sharp divergence between high-traffi
 
 ---
 
-## User Velocity & Conversion Timeframes
+## ⏱️ User Velocity & Conversion Timeframes
 
 The time elapsed between key customer interaction milestones reveals clean, highly concentrated purchasing patterns.
 
@@ -61,7 +61,7 @@ The time elapsed between key customer interaction milestones reveals clean, high
 
 ---
 
-## Strategic Cross-Functional Recommendations
+## 💡 Strategic Cross-Functional Recommendations
 
 Based on the quantitative insights generated via SQL, the following intentional strategic initiatives have been mapped to core executive stakeholders:
 
@@ -85,7 +85,7 @@ The following database output captures the baseline financial metrics validating
 
 ---
 
-## Tech Stack & Directory Structure
+## 🛠️ Tech Stack & Directory Structure
 * **Database Engine:** PostgreSQL (Local Instance)
 * **Development Workspace:** VS Code, Git, & GitHub
 
@@ -93,6 +93,7 @@ The following database output captures the baseline financial metrics validating
 ecommerce-sales-funnel-analysis/
 ├── assets/                        # Embedded database verification visual captures
 ├── data/
+│   ├── processed/                 # Placeholder for downstream dashboard schema extractions
 │   └── raw/                       # Raw user_events.csv (Protected via .gitignore)
 ├── sql/
 │   ├── 1_funnel_stages_count.sql  # User volume counts per stage

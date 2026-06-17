@@ -16,3 +16,4 @@ WITH funnel_stages AS (
     
 SELECT * 
 FROM funnel_stages;
+
