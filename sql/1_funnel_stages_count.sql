@@ -1,3 +1,6 @@
+-- Raw data view
+SELECT * FROM user_events;
+
 -- define sales funnel and the different stages
 
 WITH funnel_stages AS (
